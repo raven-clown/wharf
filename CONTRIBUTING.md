@@ -7,7 +7,7 @@ Thanks for helping out. Bug reports, compatibility reports, docs fixes, tests an
 - Issues labeled `good first issue` are small and say exactly what to change.
 - Issues labeled `help wanted` are bigger. Each one links the plan task it comes from, with the interface and the tests it needs.
 - Milestones group issues by phase. Start with the earliest open one.
-- The [wharf board](https://github.com/users/raven-clown/projects) tracks every plan task and who has it.
+- The [wharf board](https://github.com/users/raven-clown/projects/8) tracks every plan task and who has it.
 
 If you take an issue, leave a comment on it so nobody else picks it up. If you go quiet for two weeks, someone else may take it over.
 
