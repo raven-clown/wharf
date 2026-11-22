@@ -1,0 +1,88 @@
+name: Bug report
+description: Something in wharf doesn't work the way the docs say.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report this.
+
+        - Search the [open issues](https://github.com/raven-clown/wharf/issues) first. If one matches, add what you know there.
+        - A security problem goes to a [private report](https://github.com/raven-clown/wharf/security/advisories/new), not here.
+        - Something that works in Harbor and not in wharf is a [compatibility gap](https://github.com/raven-clown/wharf/issues/new?template=compat.yml).
+        - Paste text, not screenshots. Remove passwords, tokens and private hostnames.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "Output of `wharf --version`, or the commit you built."
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Linux, macOS, Windows, Kubernetes, Other]
+    validations:
+      required: true
+  - type: dropdown
+    id: storage
+    attributes:
+      label: Storage
+      options: [Filesystem, S3 or S3-compatible, GCS, Azure, Not sure]
+    validations:
+      required: true
+  - type: dropdown
+    id: database
+    attributes:
+      label: Database
+      options: [SQLite (default), PostgreSQL, Not sure]
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: Client
+      description: The client and its version, such as Docker 28.3, Helm 3.18, oras 1.3 or a browser for the UI.
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+      description: The output, the HTTP status and body, the error message.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The smallest set of steps that shows it, with the exact commands.
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Config
+      description: The smallest config that shows it, with secrets removed.
+      render: toml
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched the open issues and this isn't one of them
+          required: true
+        - label: I removed passwords, tokens and other secrets from what I pasted
+          required: true

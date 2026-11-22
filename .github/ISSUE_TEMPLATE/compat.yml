@@ -1,0 +1,77 @@
+name: Harbor compatibility gap
+description: Something that works against Harbor fails or behaves differently against wharf.
+labels: [compatibility]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        wharf aims to replace Harbor without changes to clients, scripts or Terraform. Any difference is a bug, and this form collects what we need to fix it.
+
+        - Check the compatibility table in [docs/design.md](https://github.com/raven-clown/wharf/blob/main/docs/design.md) first. A feature planned for a later phase is known; a thumbs-up on its issue helps us order the work.
+        - Remove passwords, tokens, robot secrets and private hostnames before you paste.
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Where is the difference?
+      options:
+        - OCI registry API (/v2)
+        - Token service (/service/token)
+        - Management API (/api/v2.0)
+        - Harbor Terraform provider
+        - harbor-cli
+        - Webhook payloads
+        - Replication with a Harbor
+        - wharf import harbor
+        - Web UI
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: harbor
+    attributes:
+      label: Harbor version you compared with
+      placeholder: "2.14.2"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: wharf version
+      description: "Output of `wharf --version`."
+    validations:
+      required: true
+  - type: textarea
+    id: request
+    attributes:
+      label: Request or command
+      description: The exact request, command or Terraform resource.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: harbor_response
+    attributes:
+      label: What Harbor returns
+      description: Status, headers that matter and body.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: wharf_response
+    attributes:
+      label: What wharf returns
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: What breaks for you
+      description: The script, pipeline or tool that stops working.
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you like to fix it?
+      options: ["Yes", "Yes, with some help", "No"]
+    validations:
+      required: true

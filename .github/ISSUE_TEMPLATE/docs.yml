@@ -1,0 +1,21 @@
+name: Docs problem
+description: Something in the docs is wrong, missing or hard to follow.
+labels: [documentation]
+body:
+  - type: input
+    id: where
+    attributes:
+      label: Page or file
+      placeholder: docs/design.md, section 9
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: What it should say

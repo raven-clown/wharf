@@ -1,0 +1,72 @@
+name: Feature request
+description: Propose something new. We agree on the design here before anyone writes code.
+labels: [enhancement, needs design]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        - Title: the capability, in a short imperative phrase, such as "Add a GCS storage driver" or "Filter the audit log by robot".
+        - Start from the problem, not the solution.
+        - One feature per issue. Split a big idea into pieces that can ship on their own.
+        - If Harbor already does it and wharf doesn't, use the [compatibility gap](https://github.com/raven-clown/wharf/issues/new?template=compat.yml) form instead.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - OCI distribution
+        - Storage
+        - Metadata and migrations
+        - Auth, users and robots
+        - Projects and RBAC
+        - Policies (retention, immutability, quota, GC)
+        - Replication and proxy cache
+        - Scanning and signatures
+        - Webhooks and audit
+        - Web UI
+        - CLI and config
+        - Metrics and tracing
+        - Docs
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: The problem this solves and who has it.
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Proposed design
+      description: Config keys, endpoints, CLI flags or UI changes. A short TOML or request sketch is best.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Behavior
+      description: What happens in the normal case, on errors and at the edges.
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Tests
+      description: The cases a pull request for this should cover.
+    validations:
+      required: true
+  - type: textarea
+    id: others
+    attributes:
+      label: How other registries do it
+      description: Harbor, zot, Distribution, Quay or others, if you know.
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you like to build it?
+      options: ["Yes", "Yes, with some help", "No"]
+    validations:
+      required: true

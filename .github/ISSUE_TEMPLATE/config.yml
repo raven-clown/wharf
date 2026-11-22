@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and ideas
+    url: "https://github.com/raven-clown/wharf/discussions"
+    about: Ask how to do something, or float an idea before it becomes a feature request.
+  - name: Security problem
+    url: "https://github.com/raven-clown/wharf/security/advisories/new"
+    about: Report a vulnerability privately. Please don't open a public issue.
